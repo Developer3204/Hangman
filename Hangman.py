@@ -74,7 +74,7 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
   if (myGuess != myWord) and myGuess != : 
   	print ("Invalid input, please enter another string")
   
-  while (myGuess != myWord)) or myGame.allLettersCorrect() != True:
+  while (myGuess != myWord) or myGame.allLettersCorrect() != True:
   	myList = checkLetter(myWord,myGuess)
     myGame.changeState(myList) = False
     	numWrong += 1 
@@ -82,9 +82,9 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
     myGame.showState
     if myGame == myWord:
     	print("Yay! You win!")
+	wantToPlay = input("Would you like to play again? (Yes or No) ")
     if numWrong == 6:
     	print("Oop, you lose.")
-      
 	wantToPlay = input("Would you like to play again? (Yes or No) ")
 
 print("Okay, bye.")
