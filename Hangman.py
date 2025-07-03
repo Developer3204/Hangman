@@ -10,6 +10,56 @@ def checkLetter(word, letter):
         else:
             returninglist.append(False)
     return(returninglist)
+class Status:
+    def __init__(self, answer):
+        self.score = 6
+        self.word = answer.lower()
+        self.usedLetters = []
+        self.currentState = []
+        self.isInWord = 0
+        for i in range(len(self.word)):
+            self.currentState.append(" _ ")
+
+    def showState(self):
+        self.state = ""
+        self.used = ""
+        for i in range(len(self.currentState)):
+            self.state = self.state + self.currentState[i]
+        for i in range(len(self.usedLetters)):
+            self.used = self.used + self.usedLetters[i]
+        return self.state + "\nUsed Letters\n" + self.used
+
+    def changeState(self, positionsToChange, guess):
+        self.placement = positionsToChange
+        self.guess = " " + str(guess) + " "
+        self.alreadyGuessed = False
+        for i in range(len(self.usedLetters)):
+            if self.usedLetters[i] == self.guess:
+                self.alreadyGuessed = True
+        if not self.alreadyGuessed:
+            self.usedLetters.append(self.guess)
+        for i in range(len(self.placement)):
+            if self.placement[i]:
+                self.isInWord = 1
+        if self.isInWord == 1:
+            for i in range(len(self.word)):
+                if self.placement[i]:
+                    del self.currentState[i]
+                    self.currentState.insert(i, self.guess)
+            self.isInWord -= 1
+            return True
+        else:
+            return False
+
+    def allLettersCorrect(self):
+        self.currentWord = ""
+        for i in range(len(self.placement)):
+            self.currentWord = self.currentWord + str(self.currentState[i])
+        self.currentWord = self.currentWord.replace(" ", "")
+        if self.currentWord == self.word:
+            return True
+        else:
+            return False
 
 wantToPlay = input("Hello! Would you like to play a game of hangman??? (Yes or No) ")
 while wantToPlay == "Yes" or wantToPlay == "yes":
