@@ -68,11 +68,12 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
   while type(numLetters) != 'int' and numLetters < 3 and numLetter >10:
 	try:  
   		numLetters = int((input("Invalid input, please enter the right number: "))
-	exception ValueError
+	exception ValueError: 
+		print("Please enter the the right integer") 
   myWord = getWord(numLetters)
   myGame = Status(myWord)
   myGuess = input("Please guess a letter or word: ") 
-  if (myGuess != myWord) and myGuess != : 
+  if myGuess != myWord and len(myGuess) != 1: 
   	print ("Invalid input, please enter another string")
   
   while (myGuess != myWord) or myGame.allLettersCorrect() != True:
