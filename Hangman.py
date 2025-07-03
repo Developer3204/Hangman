@@ -65,10 +65,10 @@ wantToPlay = input("Hello! Would you like to play a game of hangman??? (Yes or N
 while wantToPlay == "Yes" or wantToPlay == "yes":
 	numWrong == 0
 	numLetters = int((input("How many letters would you like in your word? (Enter any number between 3 and 10) "))
-  while type(numLetters) != 'int':
+  while type(numLetters) != 'int' and numLetters < 3 and numLetter >10:
 	try:  
-  		numLetters = int((input("Invalid input, please enter an integer: "))
-	exception(V
+  		numLetters = int((input("Invalid input, please enter the right number: "))
+	exception ValueError
   myWord = getWord(numLetters)
   myGame = Status(myWord)
   myGuess = input("Please guess a letter or word: ") 
