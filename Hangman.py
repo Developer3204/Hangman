@@ -76,10 +76,10 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
   
   while (myGuess != myWord) or myGame.allLettersCorrect() != True:
   	myList = checkLetter(myWord,myGuess)
-    myGame.changeState(myList) = False
+    if myGame.changeState(myList, myGuess) == False
     	numWrong += 1 
     drawHangman(numWrong)
-    myGame.showState
+    myGame.showState()
     if myGame == myWord:
     	print("Yay! You win!")
 	wantToPlay = input("Would you like to play again? (Yes or No) ")
