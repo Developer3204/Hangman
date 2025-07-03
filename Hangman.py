@@ -66,7 +66,9 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
 	numWrong == 0
 	numLetters = int((input("How many letters would you like in your word? (Enter any number between 3 and 10) "))
   while type(numLetters) != 'int':
-  	numLetters = int((input("Invalid input, please enter an integer: "))
+	try:  
+  		numLetters = int((input("Invalid input, please enter an integer: "))
+	exception(V
   myWord = getWord(numLetters)
   myGame = Status(myWord)
   myGuess = input("Please guess a letter or word: ") 
