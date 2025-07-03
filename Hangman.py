@@ -72,11 +72,11 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
 		print("Please enter the the right integer") 
   myWord = getWord(numLetters)
   myGame = Status(myWord)
-  myGuess = input("Please guess a letter or word: ") 
   if myGuess != myWord and len(myGuess) != 1: 
   	print ("Invalid input, please enter another string")
   
   while (myGuess != myWord) or myGame.allLettersCorrect() != True:
+	myGuess = input("Please guess a letter or word: ") 
   	myList = checkLetter(myWord,myGuess)
     if myGame.changeState(myList, myGuess) == False
     	numWrong += 1 
