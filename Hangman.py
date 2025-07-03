@@ -74,7 +74,7 @@ while wantToPlay == "Yes" or wantToPlay == "yes":
   if (myGuess != myWord) and myGuess != : 
   	print ("Invalid input, please enter another string")
   
-  while (myGuess != myWord)) or (allLettersCorrect() != True):
+  while (myGuess != myWord)) or myGame.allLettersCorrect() != True:
   	myList = checkLetter(myWord,myGuess)
     myGame.changeState(myList) = False
     	numWrong += 1 
