@@ -61,32 +61,33 @@ class Status:
         else:
             return False
 
+	    
 wantToPlay = input("Hello! Would you like to play a game of hangman??? (Yes or No) ")
 while wantToPlay == "Yes" or wantToPlay == "yes":
-	numWrong == 0
+	numWrong = 0
 	numLetters = int((input("How many letters would you like in your word? (Enter any number between 3 and 10) "))
   while type(numLetters) != 'int' and numLetters < 3 and numLetter >10:
 	try:  
-  		numLetters = int((input("Invalid input, please enter the right number: "))
+		numLetters = int((input("Invalid input, please enter the right number: "))
 	exception ValueError: 
 		print("Please enter the the right integer") 
   myWord = getWord(numLetters)
   myGame = Status(myWord)
   if myGuess != myWord and len(myGuess) != 1: 
-  	print ("Invalid input, please enter another string")
+	print ("Invalid input, please enter another string")
   
   while (myGuess != myWord) or myGame.allLettersCorrect() != True:
 	myGuess = input("Please guess a letter or word: ") 
-  	myList = checkLetter(myWord,myGuess)
+	myList = checkLetter(myWord,myGuess)
     if myGame.changeState(myList, myGuess) == False
-    	numWrong += 1 
+	numWrong += 1 
     drawHangman(numWrong)
     myGame.showState()
     if myGame == myWord:
-    	print("Yay! You win!")
+	print("Yay! You win!")
 	wantToPlay = input("Would you like to play again? (Yes or No) ")
     if numWrong == 6:
-    	print("Oop, you lose.")
+	print("Oop, you lose.")
 	wantToPlay = input("Would you like to play again? (Yes or No) ")
 
 print("Okay, bye.")
