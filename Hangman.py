@@ -65,7 +65,6 @@ wantToPlay = input("Hello! Would you like to play a game of hangman??? (Yes or N
 while wantToPlay == "Yes" or wantToPlay == "yes":
 	numWrong == 0
 	numLetters = int((input("How many letters would you like in your word? (Enter any number between 3 and 10) "))
-        numletters 
   if numLetters != int:
   	numLetters = int((input("Invalid input, please enter an integer: "))
   myWord = getWord(numLetters)
